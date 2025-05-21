@@ -1,0 +1,19 @@
+import {useEffect} from 'react';
+
+function useOnEscapeKey(callback) {
+    useEffect(() => {
+        function onEscapeKeyDown(event) {
+            if (event.code === "Escape") {
+                callback();
+            }
+        }
+
+        window.addEventListener("keydown", onEscapeKeyDown);
+
+        return () => {
+            window.removeEventListener("keydown", onEscapeKeyDown)
+        }
+    }, [callback]);
+}
+
+export default useOnEscapeKey;

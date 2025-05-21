@@ -286,7 +286,7 @@ Let's build a **custom reusable hook** that makes it easy to reuse this boilerpl
 There are lots of different ways to tackle this, and there's no right or wrong answer, but here's one idea to get you started: what if we create a new custom hook called `useEscapeKey`?
 
 ```js
-useEscapeKey(() => {
+useOnEscapeKey(() => {
   // Code to dismiss all toasts
 });
 ```
