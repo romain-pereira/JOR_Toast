@@ -24,10 +24,11 @@ function ToastProvider({children}) {
             ]);
     }
 
-    return (<ToastContext.Provider value={{createToast}}>
-        <ToastShelf toasts={toasts} dismiss={dismissToast}/>
-        {children}
-    </ToastContext.Provider>);
+    return (
+        <ToastContext.Provider value={{createToast, dismissToast}}>
+            <ToastShelf toasts={toasts}/>
+            {children}
+        </ToastContext.Provider>);
 }
 
 export default ToastProvider;
