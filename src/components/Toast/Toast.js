@@ -11,7 +11,7 @@ const ICONS_BY_VARIANT = {
     error: AlertOctagon,
 };
 
-function Toast({id, variant, message}) {
+function Toast({id, variant, children}) {
     const {dismissToast} = React.useContext(ToastContext);
     const Icon = ICONS_BY_VARIANT[variant];
 
@@ -22,7 +22,7 @@ function Toast({id, variant, message}) {
             </div>
             <p className={styles.content}>
                 <VisuallyHidden>{variant} - </VisuallyHidden>
-                {message}
+                {children}
             </p>
             <button className={styles.closeButton}
                     aria-label="Dismiss message"
