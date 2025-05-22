@@ -1,13 +1,13 @@
 import React from 'react';
 import ToastShelf from "../ToastShelf";
-import useOnEscapeKey from "../hooks/useOnEscapeKey";
+import useEscapeKey from "../hooks/use-escape-key";
 
 export const ToastContext = React.createContext({});
 
 function ToastProvider({children}) {
     const [toasts, setToasts] = React.useState([]);
 
-    useOnEscapeKey(() => setToasts([]));
+    useEscapeKey(() => setToasts([]));
 
     function dismissToast(idToRemove) {
         setToasts((prevState) => [...prevState.filter(({id}) => id !== idToRemove)]);
